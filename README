@@ -1,3 +1,37 @@
+== Welcome to the Cincinnati Ruby Brigade's Suggestion Box
+
+You'll need to start with:
+
+* rvm link:http://rvm.beginrescueend.com/
+** <tt>gem install rvm</tt>
+* (for Windows users)
+** pik link:http://github.com/vertiginous/pik
+** <tt>gem install pik</tt>
+* ruby-1.9.2-rc2  (rvm install ruby-1.9.2-rc2)
+* sqlite3 3.6+ link:http://www.sqlite.org/download.html
+** Mac OS X has sqlite3, but Leopard's is too old
+* bundler link:http://gembundler.com/v1.0/index.html
+** <tt>gem install bundler --pre</tt>
+
+After you get this project, you can just run:
+
+<tt>bundle install</tt>
+
+to get everything else. Then get your database ready and run the tests:
+
+<tt>rake db:migrate test</tt>
+
+And you can start a local server:
+
+<tt>rails server</tt> (which will be "rails s" from now on)
+
+And visit link:http://localhost:3000/
+
+The live site is running at:
+
+http://severe-autumn-80.heroku.com/
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
