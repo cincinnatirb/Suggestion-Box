@@ -25,12 +25,18 @@ And you can start a local server:
 
 <tt>rails server</tt> (which will be "rails s" from now on)
 
-And visit link:http://localhost:3000/
+And visit: http://localhost:3000/
+
+The original Rails page is at: http://localhost:3000/rails
+
+Or jump right to the "about" info: http://localhost:3000/rails/info/properties
 
 The live site is running at:
 
 http://severe-autumn-80.heroku.com/
 
+(But you might have to go to http://severe-autumn-80.heroku.com/topics or
+http://severe-autumn-80.heroku.com/topics/new for a bit.)
 
 == Welcome to Rails
 
