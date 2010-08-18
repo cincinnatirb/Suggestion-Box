@@ -11,3 +11,6 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+require 'webrat'
+Webrat.configure {|config| config.mode = :rack; config.open_error_files = false }
