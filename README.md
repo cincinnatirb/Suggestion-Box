@@ -1,5 +1,15 @@
 == Welcome to the Cincinnati Ruby Brigade's Suggestion Box
 
+This app started as a demo project for the Cinci.rb group to work on
+together. It's serving several purposes. First, as an app for the
+newer rubyists in the group to get their feet wet with a rails
+app. Second, it serves as a test-bed for demonstrating and
+experimenting new gems. Finally, cinci.rb actually needs a suggestion
+box for new meeting topics as an effort to get the group as a whole
+more involved in the planning of our meetings.
+
+== Getting Started
+
 You'll need to start with:
 
 * rvm link:http://rvm.beginrescueend.com/
