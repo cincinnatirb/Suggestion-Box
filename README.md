@@ -1,4 +1,4 @@
-== Welcome to the Cincinnati Ruby Brigade's Suggestion Box
+# Welcome to the Cincinnati Ruby Brigade's Suggestion Box
 
 This app started as a demo project for the Cinci.rb group to work on
 together. It's serving several purposes. First, as an app for the
@@ -8,7 +8,7 @@ experimenting new gems. Finally, cinci.rb actually needs a suggestion
 box for new meeting topics as an effort to get the group as a whole
 more involved in the planning of our meetings.
 
-== Getting Started
+## Getting Started
 
 You'll need to start with:
 
@@ -48,7 +48,7 @@ http://severe-autumn-80.heroku.com/
 (But you might have to go to http://severe-autumn-80.heroku.com/topics or
 http://severe-autumn-80.heroku.com/topics/new for a bit.)
 
-== Welcome to Rails
+## Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
@@ -76,7 +76,7 @@ Rails. You can read more about Action Pack in
 link:files/vendor/rails/actionpack/README.html.
 
 
-== Getting Started
+## Getting Started
 
 1. At the command prompt, create a new Rails application:
        <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)
@@ -94,7 +94,7 @@ the following resources handy:
 * Ruby on Rails Tutorial Book: http://www.railstutorial.org/
 
 
-== Debugging Rails
+## Debugging Rails
 
 Sometimes your application goes wrong. Fortunately there are a lot of tools that
 will help you debug it and get it back on the rails.
@@ -131,7 +131,7 @@ These two books will bring you up to speed on the Ruby language and also on
 programming in general.
 
 
-== Debugger
+## Debugger
 
 Debugger support is available through the debugger command when you start your
 Mongrel or WEBrick server with --debugger. This means that you can break out of
@@ -167,7 +167,7 @@ with a IRB prompt in the server window. Here you can do things like:
 Finally, when you're ready to resume execution, you can enter "cont".
 
 
-== Console
+## Console
 
 The console is a Ruby shell, which allows you to interact with your
 application's domain model. Here you'll have all parts of the application
@@ -192,7 +192,7 @@ More information about irb can be found at:
 link:http://www.rubycentral.com/pickaxe/irb.html
 
 
-== dbconsole
+## dbconsole
 
 You can go to the command line of your database directly through <tt>rails
 dbconsole</tt>. You would be connected to the database with the credentials
@@ -201,7 +201,7 @@ to the development database. Passing an argument will connect you to a different
 database, like <tt>rails dbconsole production</tt>. Currently works for MySQL,
 PostgreSQL and SQLite 3.
 
-== Description of Contents
+## Description of Contents
 
 The default directory structure of a generated Ruby on Rails application:
 
