@@ -1,8 +1,13 @@
-<h1>Topics</h1>
-<ul>
-  <%= render @topics %>
-</ul>
+<h2>Suggestion Box</h2>
 
-<p>
-  <%= link_to "Submit a new Topic", new_topic_path %>
-</p>
+<p>List of topics submitted so far:</p>
+
+<% if @topics.blank? %>
+  <p>No topics submitted so far. Do you have any suggestions?</p>
+<% else %>
+  <ul>
+    <%= render @topics %>
+  </ul>
+<% end %>
+
+<p><%= link_to  "Suggest Something", new_topic_path %></p>
