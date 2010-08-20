@@ -1,0 +1,10 @@
+<h1><%= @topic.title %></h1>
+<h2>By <%= @topic.suggestor %> </h2>
+<p><em><%= time_ago_in_words(@topic.created_at) %> ago</em></p>
+
+<p><%= @topic.description %></p>
+
+<p>
+<%= link_to 'Back to list', topics_path %> |
+<%= link_to 'Suggest Something', new_topic_path %>
+</p>
