@@ -27,4 +27,12 @@ class TopicsControllerTest < ActionController::TestCase
     end
     should respond_with(:success)
   end
+
+  context "seeing one topic" do
+    setup do
+      @topic = Factory(:topic)
+      get :show, :id => @topic.id.to_s
+    end
+    should respond_with(:success)
+  end
 end
