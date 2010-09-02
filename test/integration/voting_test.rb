@@ -17,6 +17,11 @@ class VotingTest < ActionDispatch::IntegrationTest
           click "Vote"
         end
       end
+      should "have a message in flash" do
+        within(:css, ".flash") do
+          assert page.has_content?("Thanks")
+        end
+      end
       should "respond with success" do
         assert_equal 200, page.status_code
       end
