@@ -1,1 +1,4 @@
-  <li id='<%= dom_id(topic) %>'><%= link_to topic.title, topic %> <%= link_to "Vote", vote_topic_path(topic) %></li>
+  <li id='<%= dom_id(topic) %>'>
+    <%= link_to topic.title, topic %>
+    <%= link_to "Vote", vote_topic_path(topic) %>
+    <span class="tally"><%= topic.tally %></span></li>
