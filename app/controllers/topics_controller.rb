@@ -21,6 +21,7 @@ class TopicsController < ApplicationController
   end
 
   def vote
-    render :nothing => true
+    flash[:message] = "Thanks for voting"
+    redirect_to topics_path
   end
 end
