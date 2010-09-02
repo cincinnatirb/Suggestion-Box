@@ -25,7 +25,10 @@ class VotingTest < ActionDispatch::IntegrationTest
         assert_equal 200, page.status_code
       end
       should "add a vote for this topic" do
-        assert_equal @old_vote_count + 1, @suggestion.votes(true).count, "Where's the vote?"
+        assert_equal @old_vote_count + 1, @suggestion.votes(true).count, "Where's the vote? "
+      end
+      should "show the vote tally" do
+        assert page.has_css?("#topic_#{@suggestion.id} .tally", :text => (@old_vote_count + 1).to_s), "No tally given"
       end
     end
   end
