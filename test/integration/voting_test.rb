@@ -20,15 +20,16 @@ class VotingTest < ActionDispatch::IntegrationTest
         end
       end
       should "have a message in flash" do
-        within(:css, ".flash") do
-          assert page.has_content?("Thanks"), "Not even a thank you? "
-        end
+        assert page.has_css?(".flash", :text => "Thanks"), "Not even a thank you? "
       end
       should "respond with success" do
         assert_equal 200, page.status_code
       end
       should "add a vote for this topic" do
         assert_equal @old_vote_count + 1, @suggestion.votes(true).count, "Where's the vote? "
+      end
+      should "show the vote tally" do
+        assert page.has_css?("#topic_#{@suggestion.id} .tally", :text => (@old_vote_count + 1).to_s), "No tally given"
       end
     end
   end
