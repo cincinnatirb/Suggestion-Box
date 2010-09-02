@@ -21,7 +21,12 @@ class TopicsController < ApplicationController
   end
 
   def vote
-    flash[:message] = "Thanks for voting"
+    if (@topic = Topic.find_by_id(params[:id])) &&
+        @topic.votes.create
+      flash[:message] = "Thanks for voting"
+    else
+      flash[:message] = "Sorry, couldn't record your vote"
+    end
     redirect_to topics_path
   end
 end
