@@ -2,7 +2,7 @@ require 'test_helper'
 
 class VotingTest < ActionDispatch::IntegrationTest
 
-  context "vising the list of suggestions with a suggestion" do
+  context "visiting the list of suggestions with a suggestion" do
     setup do
       @suggestion = Factory(:topic)
       visit topics_path
@@ -16,6 +16,11 @@ class VotingTest < ActionDispatch::IntegrationTest
       setup do
         within(:css, "#topic_#{@suggestion.id}") do
           click "Vote"
+        end
+      end
+      should "have a message in flash" do
+        within(:css, ".flash") do
+          assert page.has_content?("Thanks"), "Not even a thank you? "
         end
       end
       should "respond with success" do
