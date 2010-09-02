@@ -14,6 +14,7 @@ class VotingTest < ActionDispatch::IntegrationTest
 
     context "voting for the topic" do
       setup do
+        @old_vote_count = @suggestion.votes.count
         within(:css, "#topic_#{@suggestion.id}") do
           click "Vote"
         end
@@ -25,6 +26,9 @@ class VotingTest < ActionDispatch::IntegrationTest
       end
       should "respond with success" do
         assert_equal 200, page.status_code
+      end
+      should "add a vote for this topic" do
+        assert_equal @old_vote_count + 1, @suggestion.votes(true).count, "Where's the vote? "
       end
     end
   end
