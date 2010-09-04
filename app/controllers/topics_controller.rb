@@ -19,4 +19,8 @@ class TopicsController < ApplicationController
       render :new
     end
   end
+
+  def vote
+    render :nothing => true
+  end
 end

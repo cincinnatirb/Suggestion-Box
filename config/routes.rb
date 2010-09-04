@@ -1,6 +1,8 @@
 SuggestionBox::Application.routes.draw do
   root :to => 'topics#index'
-  resources :topics
+  resources :topics do
+    member { get :vote }
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
