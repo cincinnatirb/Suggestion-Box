@@ -2,6 +2,9 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.all
+    if params[:sort]
+      @topics = @topics.sort_by { |topic| topic.send(params[:sort]) }.reverse
+    end
   end
 
   def show
