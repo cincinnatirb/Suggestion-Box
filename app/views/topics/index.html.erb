@@ -5,9 +5,10 @@
 <% if @topics.blank? %>
   <p>No topics submitted so far. Do you have any suggestions?</p>
 <% else %>
-  <ul>
+  <table>
+    <tr><th>Topic</th><th></th><th>Vote Tally</th></tr>
     <%= render @topics %>
-  </ul>
+  </table>
 <% end %>
 
 <p><%= link_to  "Suggest Something", new_topic_path %></p>
