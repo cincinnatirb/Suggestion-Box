@@ -6,7 +6,7 @@
   <p>No topics submitted so far. Do you have any suggestions?</p>
 <% else %>
   <table>
-    <thead><tr><th>Topic</th><th></th><th>Vote Tally</th></tr></thead>
+    <thead><tr><th>Topic</th><th></th><th><%= link_to "Vote Tally", topics_path(:sort => :tally) %></th></tr></thead>
     <tbody>
     <%= render @topics %>
     </tbody>
