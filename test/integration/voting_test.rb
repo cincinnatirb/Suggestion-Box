@@ -32,5 +32,31 @@ class VotingTest < ActionDispatch::IntegrationTest
         assert page.has_css?("#topic_#{@suggestion.id} .tally", :text => (@old_vote_count + 1).to_s), "No tally given"
       end
     end
+
+    context "sorting topics" do
+      setup do
+        @most = Factory(:topic)
+        5.times { @most.votes.create }
+        @least = Factory(:topic)
+        3.times { @least.votes.create }
+        @none = Factory(:topic)
+        visit topics_path
+      end
+      should "have a sort by tally link" do
+        sort_by_tally_link = topics_path(:sort => :tally)
+        assert(page.has_css?("a[href='#{sort_by_tally_link}']", :text => 'Vote Tally'),
+               "Where's the link to #{sort_by_tally_link}? (with text 'Vote Tally')")
+      end
+      context "by vote tally" do
+        setup do
+          click "Vote Tally"
+        end
+        should "have the most suggested topic first" do
+          selector = "tbody tr:first-child td.tally"
+          assert page.has_css?(selector), "Can't find the element to match: #{selector}"
+          assert page.has_css?(selector, :text => @most.tally.to_s), "Topic with most votes isn't listed first"
+        end
+      end
+    end
   end
 end
