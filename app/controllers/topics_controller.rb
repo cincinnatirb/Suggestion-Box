@@ -16,7 +16,9 @@ class TopicsController < ApplicationController
   end
 
   def create
-    if @topic = Topic.create(params[:topic])
+    # Fix that bug!
+    @topic = Topic.new(params[:topic])
+    if @topic.save
       redirect_to topics_path
     else
       render :new
