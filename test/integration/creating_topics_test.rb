@@ -37,4 +37,14 @@ class CreatingTopicsTest < ActionController::IntegrationTest
       assert page.has_content?(@topic.suggestor), "Should show the suggestor"
     end
   end
+
+  context "without a title" do
+    setup do
+      visit new_topic_path
+      click_button "Create Topic"
+    end
+    should "see an error message" do
+      assert page.has_content?("Title can't be blank"), "The page has no errors"
+    end
+  end
 end

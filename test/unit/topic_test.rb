@@ -3,6 +3,8 @@ require 'test_helper'
 class TopicTest < ActiveSupport::TestCase
   should have_many(:votes).dependent(:delete_all)
 
+  should_validate_presence_of :title
+  
   context "a topic" do
     setup do
       @topic = Factory(:topic)
